@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>salary prediction</title>
+<style type="text/css">
+    *{
+    margin:0px;
+    padding:0px;
+    }
+    body{
+            margin-top:20px;
+            margin-left:20px;
+            background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ98XyJs2bjfXYVNINgmCR-02hBJgqTwClRIthGgDfMCSJkufoU8JYKwDb9znGuzmZFO3s&usqp=CAU");
+            background-repeat: no-repeat;
+            background-attachment:fixed;
+            background-size:100%;
+            }
+       
+        form{
+            margin-top:20px;
+            background-color:cyan;
+            height:120px;
+            width:600px;
+            border:3px dashed yellow;
+                }
+        ul{
+            list-style-type: none;
+            
+        }
+        ul li a{
+         text-decoration:none;
+         color:red;
+        }
+        ul li ul{
+            display:none;
+            }
+        ul li:hover>ul{
+            display:block;
+        }
+        ul li{
+            float:left;
+            width:150px;
+            height:20px;
+            border:5px double brown;
+            background-color:white;
+            text-align:center;
+            border-radius:20px;
+            }
+        ul li ul li{
+            position:relative;
+        }
+        ul li ul li ul{
+            position:absolute;
+            margin-left:150px;
+            top:0px;
+        }
+        ul li:hover{
+            background-color:green;
+        }
+        img{
+        float:center;
+        }
+        h1{
+        margin-top:50px;
+        text-decoration:underline;
+        background-color:brown;
+        height:50px;
+        width:300px;
+        border:3px dashed blue;
+        }
+</style>
+</head>
+<body bgcolor="skyblue">
+
+    <ul>
+        <li><a href="http://www.sietk.org/library.php" target="blank">admissions</a>
+            <ul>
+                <li><a href="#" target="blank">year 2019</a>
+                    <ul>
+                        <li><a href="#" target="blank">ece</a></li>
+                        <li><a href="#" target="blank">cse</a></li>
+                        <li><a href="#" target="blank">It</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" target="blank">year 2020</a></li>
+                <li><a href="#" target="blank">year 2021</a></li>
+                <li><a href="#" target="blank">year 2022</a></li>      
+            </ul> 
+        </li>
+        <li><a href="#" target="blank">college</a></li>
+        <li><a href="#" target="blank">results</a></li>
+        <li><a href="#" target="blank">placements</a></li>
+        <li><a href="#" target="blank">founder</a></li>
+    </ul>
+<center>
+<center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL1Z6M8R9e-sk0bQUYAhgglQBenabDfjfTexOkon08lxb5-iViMa2XB5Z7B_DJ6GVeVdc&usqp=CAU" width=500px height=475px title="siddharth engineernig college"></center>
+<h1>salary prediction </h1>
+<form action="{{ url_for('predict')}}"method="post">
+    <table>
+        <tr>
+            <td>
+                QUALIFICATION :
+            </td>
+            <td>
+                <select>
+                    <option>enter 0 for btech</option>
+                    <option>enter 1 for mtech</option>
+                    <option>enter 2 for phd</option>
+                </select>
+                <input type="text" name="qualification" placeholder="qualification" required="required" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                EXPERIENCE :
+            </td>
+            <td>
+                <input type="text" name="experience" placeholder="experience" required="required" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                NO OF SUBJECTS DEAL :
+            </td>
+            <td>
+                <input type="text" name="noofsubjects" placeholder="noofsubjects" required="required" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                POSITION :
+            </td>
+            <td>
+                <select>
+                    <option>enter 0 for lecturer</option>
+                    <option>enter 1 for assistant professor</option>
+                    <option>enter 2 for lab assistant</option>
+                    <option>enter 3 for professor</option>
+                    <option>enter 4 for hod</option>
+                </select>
+                <input type="text" name="position" placeholder="position" required="required" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                SUBMIT :
+            </td>
+            <td>
+                <button type="submit" >Predict</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+    <hr>
+     <h2>result :: {{ prediction_text }} </h2>
+    <hr>
+    
+    </center>
+    
+    </body>
+    </html>
+
+</body>
+

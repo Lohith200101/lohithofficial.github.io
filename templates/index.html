@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  
+  
+</head>
+
+<body bgcolor="yellow">
+    
+  <marquee bgcolor="white" ><font color="green" font="impact">siddhath institute of engineering and technology</font></marquee>  
+ <div class="login">
+	
+
+    <center>
+    
+        <h1>Predict Salary Analysis</h1>
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="qualification" placeholder="qualification" required="required" /><br><br>
+        <input type="text" name="experience" placeholder="experience" required="required" /><br><br>
+		<input type="text" name="noofsubjects" placeholder="noofsubjects" required="required" /><br><br>
+        <input type="text" name="position" placeholder="position" required="required" /><br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    </center>
+   <br>
+   <br>
+   {{ prediction_text }}
+</center>
+ </div>
+
+
+</body>
+</html>
